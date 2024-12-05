@@ -12,4 +12,8 @@ export class ProductsService {
   findAll() {
     return this.products;
   }
+
+  findOneById() {
+    return 1;
+  }
 }

@@ -8,4 +8,9 @@ export class OrdersController {
   getProducts() {
     return this.productsService.findAll();
   }
+
+  @Get(':id')
+  getOrder() {
+    return this.productsService.findOneById();
+  }
 }

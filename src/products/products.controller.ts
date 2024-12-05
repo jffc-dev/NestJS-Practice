@@ -8,13 +8,16 @@ import {
   Post,
   Query,
   Redirect,
+  UseInterceptors,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ProductsService } from './products.service';
+import { LoggingInterceptor } from 'src/logging.iterceptor';
 
 @Controller({ host: ':admin.example.com', path: 'products' })
+@UseInterceptors(LoggingInterceptor)
 export class ProductsController {
   constructor(public productsService: ProductsService) {}
   @Get()
